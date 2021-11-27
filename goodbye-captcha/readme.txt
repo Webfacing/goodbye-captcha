@@ -1,10 +1,10 @@
 === WPBruiser {no- Captcha anti-Spam} ===
-Contributors: mihche
+Contributors: mihche, knutsp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XVC3TSGEJQP2U
 Tags: captcha, antispam, anti-spam, spam, mailpoet, antispambot, brute force, comment spam, jetpack contact form, contact form 7, ninja forms, formidable forms, wp bruiser
-Requires at least: 4.0
-Tested up to: 5.5.1
-Stable tag: 3.1.43
+Requires at least: 5.8
+Tested up to: 5.8.2
+Stable tag: 3.1.43.1-wf
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -221,6 +221,10 @@ Studies shown that visual CAPTCHAs take around 5-10 seconds to complete and audi
 * Refreshed Incapsula, Amazon and Cloudflare trusted IPs ranges
 
 == Changelog ==
+
+= 3.1.43.1-wf =
+
+- Fixed PHP 8.0 fatal error and warning, props @knutsp
 
 = 3.1.43 =
 - Fixed PHP 7.4 warnings

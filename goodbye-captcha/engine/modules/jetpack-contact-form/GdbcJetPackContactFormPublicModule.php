@@ -34,39 +34,39 @@ final class GdbcJetPackContactFormPublicModule extends GdbcBasePublicModule
 		$this->registerJetPackContactFormHooks();
 
 	}
-	
+
 	public function registerJetPackContactFormHooks()
 	{
-		
+
 		add_filter('grunion_contact_form_field_html', array($this, 'insertGoodByeCaptchaToken'), 1000, 3);
-		
+
 		defined('JETPACK__VERSION') && version_compare(JETPACK__VERSION, '3.4-beta', '>')
 			? add_filter('jetpack_contact_form_is_spam', array($this, 'validateContactFormEncryptedToken'), 1, 2)
 			: add_filter('contact_form_is_spam', array($this, 'validateContactFormEncryptedToken'));
-		
-		
+
+
 		$inputTokenField = $this->getTokenFieldHtml();
-		
+
 		add_filter('do_shortcode_tag', function($formOutputHtml, $shortCodeTag ) use ($inputTokenField){
-			
+
 			if($shortCodeTag !== 'contact-form')
 				return $formOutputHtml;
-			
+
 			$hiddenField = GdbcSettingsPublicModule::getInstance()->getOption(GdbcSettingsAdminModule::OPTION_HIDDEN_INPUT_NAME);
-			
+
 			if(false === strpos($formOutputHtml, $hiddenField))
 			{
 				$formOutputHtml = str_replace('</form>', $inputTokenField . '</form>', $formOutputHtml);
 			}
-			
+
 			return $formOutputHtml;
-			
-			
+
+
 		}, 1000, 2);
-		
-		
+
+
 	}
-	
+
 	public function validateContactFormEncryptedToken($isSpam, $arrPostedData)
 	{
 
@@ -127,7 +127,7 @@ final class GdbcJetPackContactFormPublicModule extends GdbcBasePublicModule
 		if(GdbcRequestController::isValid($this->getAttemptEntity()))
 			return false;
 
-		if(null !== $grunionForm && in_array('errors', (array)get_class_vars($grunionForm)))
+		if(null !== $grunionForm && in_array('errors', (array)get_class_vars($grunionForm::class)))
 		{
 			is_wp_error($grunionForm->errors)
 				? $grunionForm->errors->add($this->PLUGIN_SLUG,           __('Your entry appears to be spam!', GoodByeCaptcha::PLUGIN_SLUG))
