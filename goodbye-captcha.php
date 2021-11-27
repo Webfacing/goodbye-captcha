@@ -10,10 +10,10 @@
  * Plugin Name: WPBruiser
  * Plugin URI: http://www.wpbruiser.com
  * Description: An extremely powerful anti-spam plugin that blocks spambots without annoying captcha images. Forked by knutsp at WebFacing to fix some errors and warnings.
- * Version: 3.1.43.1-wf
+ * Version: 3.1.43.2-wf
  * Author: Mihai Chelaru, Knut Sparhell
  * Author URI: http://www.wpbruiser.com
- * Requires PHP:    	7.4
+ * Requires PHP:    	7.3
  * Requires at least:   5.8
  * Tested up to:    	5.8.2
  * Text Domain: wp-bruiser
