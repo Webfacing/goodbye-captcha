@@ -13,7 +13,7 @@
  * Version: 3.1.43.1-wf
  * Author: Mihai Chelaru, Knut Sparhell
  * Author URI: http://www.wpbruiser.com
- * Requires PHP:    	7.4
+ * Requires PHP:    	7.3
  * Requires at least:   5.8
  * Tested up to:    	5.8.2
  * Text Domain: wp-bruiser
