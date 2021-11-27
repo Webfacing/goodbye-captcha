@@ -88,7 +88,7 @@ abstract class PhpCrypt_Cipher extends PhpCrypt_Core
 	 *
 	 * @return void
 	 */
-	protected function __destruct()
+	public function __destruct()
 	{
 
 	}
