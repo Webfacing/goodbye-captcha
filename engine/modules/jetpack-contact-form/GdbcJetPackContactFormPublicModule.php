@@ -127,7 +127,7 @@ final class GdbcJetPackContactFormPublicModule extends GdbcBasePublicModule
 		if(GdbcRequestController::isValid($this->getAttemptEntity()))
 			return false;
 
-		if(null !== $grunionForm && in_array('errors', (array)get_class_vars($grunionForm::class)))
+		if(null !== $grunionForm && in_array('errors', (array)get_class_vars(get_class( $grunionForm ))))
 		{
 			is_wp_error($grunionForm->errors)
 				? $grunionForm->errors->add($this->PLUGIN_SLUG,           __('Your entry appears to be spam!', GoodByeCaptcha::PLUGIN_SLUG))
