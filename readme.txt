@@ -2,9 +2,10 @@
 Contributors: mihche, knutsp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XVC3TSGEJQP2U
 Tags: captcha, antispam, anti-spam, spam, mailpoet, antispambot, brute force, comment spam, jetpack contact form, contact form 7, ninja forms, formidable forms, wp bruiser
+Requires PHP: 7.3
 Requires at least: 5.8
 Tested up to: 5.8.2
-Stable tag: 3.1.43.1-wf
+Stable tag: 3.1.43.2-wf
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
