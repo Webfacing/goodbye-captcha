@@ -97,7 +97,7 @@ abstract class PhpCrypt_Mode
 	 *
 	 * @return void
 	 */
-	protected function __destruct()
+	public function __destruct()
 	{
 
 	}
