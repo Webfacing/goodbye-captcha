@@ -10,12 +10,12 @@
  * Plugin Name: WPBruiser
  * Plugin URI: http://www.wpbruiser.com
  * Description: An extremely powerful anti-spam plugin that blocks spambots without annoying captcha images. Forked by knutsp at WebFacing to fix some errors and warnings.
- * Version: 3.1.43.2-wf
+ * Version: 3.1.43.4-wf
  * Author: Mihai Chelaru, Knut Sparhell
  * Author URI: http://www.wpbruiser.com
  * Requires PHP:    	7.3
  * Requires at least:   5.8
- * Tested up to:    	5.8.2
+ * Tested up to:    	6.3.1
  * Text Domain: wp-bruiser
  * Domain Path: /languages
  */
@@ -26,7 +26,7 @@ if(!class_exists('GoodByeCaptcha', false))
 	class GoodByeCaptcha
 	{
 
-		CONST PLUGIN_VERSION    = '3.1.43';
+		CONST PLUGIN_VERSION    = '3.1.43.4-wf';
 		CONST PLUGIN_SLUG       = 'wp-bruiser';
 		CONST PLUGIN_NAME       = 'WPBruiser';
 		CONST PLUGIN_SITE_URL   = 'https://www.wpbruiser.com';
@@ -134,7 +134,7 @@ if(!class_exists('GoodByeCaptcha', false))
 
 	require_once dirname(__FILE__) . '/includes/MchGdbcLibAutoloader.php';
 
-	spl_autoload_register(array('GoodByeCaptcha', 'classAutoLoad'), false);
+	spl_autoload_register(array('GoodByeCaptcha', 'classAutoLoad'), true);	// For 8.0, was false
 
 
 	if (defined('ABSPATH'))
