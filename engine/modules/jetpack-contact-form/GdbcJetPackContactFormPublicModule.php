@@ -70,9 +70,11 @@ final class GdbcJetPackContactFormPublicModule extends GdbcBasePublicModule
 	public function validateContactFormEncryptedToken($isSpam, $arrPostedData)
 	{
 
-		$arrClassProperties = get_class_vars('Grunion_Contact_Form');
+		$arrClassProperties =  class_exists( 'Grunion_Contact_Form' ) ?
+			get_class_vars('Grunion_Contact_Form') :
+			get_class_vars( 'Automattic\Jetpack\Forms\ContactForm\Contact_Form' );
 
-		$grunionForm = isset($arrClassProperties['last']) ? Grunion_Contact_Form::$last : null;
+		$grunionForm = isset( $arrClassProperties['last'] ) ? ( class_exists( 'Grunion_Contact_Form' ) ? Grunion_Contact_Form::$last : Automattic\Jetpack\Forms\ContactForm\Contact_Form ) : null;
 		$arrGrunionFormFieldIds = (null !== $grunionForm && is_callable(array($grunionForm, 'get_field_ids'))) ? $grunionForm->get_field_ids() : array();
 
 		$arrSubmittedData = array();
